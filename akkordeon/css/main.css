@@ -1,0 +1,78 @@
+* {
+    font-family: 'Fira Sans';
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+}
+
+.akkordeon {
+    margin: 10px;
+}
+
+.main {
+    list-style: none;
+    background-color: #e7e7e7;
+    color: #fff;
+    width: 460px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.text {
+    min-height: 40px;
+    line-height: 40px;
+    color: #fff;
+    width: 440px;
+    border-radius: 20px;
+    padding-left:20px;
+    background-color: #696666;
+}
+
+.main:nth-child(2n) .text{
+    background-color: #e7e7e7;
+    color: #4f4f4f;
+}
+
+.main:hover .text{
+    background-color: #ff8663;
+    color: #fff;
+    cursor: pointer;
+}
+
+.arrow {
+    display: inline-block;
+    float: right;
+    border: 6px solid transparent;
+    border-top: 10px solid #ff8663;
+    margin: 15px 20px 0 0;
+}
+
+.main:hover .arrow{
+    border: 6px solid transparent;
+    border-bottom: 10px solid #fff;
+    margin: 9px 20px 0 0;
+}
+
+.sub-menu{
+    list-style: none;
+    background-color: #e7e7e7;
+    color: #4f4f4f;
+    border-radius:20px;
+    padding:10px 20px;
+    min-height:20px;
+    display:none;
+    transition: all 0.3s ease;
+}
+
+.main.active .text{
+    background-color: #ff8663;
+    color: #fff;
+}
+
+.main.active .arrow{
+    border: 6px solid transparent;
+    border-bottom: 10px solid #fff;
+    margin: 9px 20px 0 0;
+}
