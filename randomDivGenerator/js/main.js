@@ -45,13 +45,14 @@ function capture(e) {
         targetDivY = e.offsetY;
         targetDiv.style.zIndex = 500;
         mouseDown = true;
+
     }
 }
 
 function move(e) {
-    if (e.target == targetDiv && mouseDown){
-        e.target.style.left = e.clientX - targetDivX + 'px';
-        e.target.style.top = e.clientY - targetDivY + 'px';
+    if (targetDiv && mouseDown){
+        targetDiv.style.left = e.clientX - targetDivX + 'px';
+        targetDiv.style.top = e.clientY - targetDivY + 'px';
     }
 }
 
@@ -59,12 +60,12 @@ function release(e) {
     if (e.target.getAttribute('id').indexOf('div-') == 0){
         targetDiv = e.target;
         targetDiv.style.zIndex = 0;
-        targetDiv = undefined;
+        targetDiv = null;
         mouseDown = false;
     }
 }
 
 button.addEventListener('click', generateNewDiv);
-body.addEventListener('mousedown',capture);
-body.addEventListener('mousemove',move);
-body.addEventListener('mouseup',release);
+document.addEventListener('mousedown',capture);
+document.addEventListener('mousemove',move);
+document.addEventListener('mouseup',release);
